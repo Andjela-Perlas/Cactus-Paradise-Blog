@@ -1,2 +1,8 @@
 # Cactus-Paradise-Blog
-School projects for PHP course
+A list of technologies:
+- Bootstrap 4
+- JavaScript
+- Ajax
+- jQuery
+- procedural PHP
+
