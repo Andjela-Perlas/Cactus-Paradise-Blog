@@ -39,6 +39,12 @@ require 'views/fixed/sidebar.php';
      case 'suggestion':
      require 'views/pages/suggestion.php'; 
      break;
+     case '403':
+     require_once "views/pages/403.php";
+     break;
+     case '404':
+     require_once "views/pages/404.php";
+     break;
      default:
      require_once 'views/pages/user.php';
      break;
