@@ -1,0 +1,2 @@
+ErrorDocument 404 http://localhost/sajtPHP/index.php?page=404
+ErrorDocument 403 http://localhost/sajtPHP/index.php?page=403

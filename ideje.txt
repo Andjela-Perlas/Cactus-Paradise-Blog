@@ -1,0 +1,100 @@
+<!-- <?php forech($posts as $post) : ?>
+			<?php require_once 'views/post'; ?>
+		<?php endforeach; ?> -->
+
+
+
+
+<?php
+if(isset($_GET['id'])):
+  $id = $_GET['id'];
+  
+?>
+<?php
+    $sql = "SELECT * FROM post WHERE postID = :id;"; //Pripremanje upita za izvrsavanje
+    $stmt = $conn->prepare($sql); // Izvrsavanje upita sa konkretnim parametrom
+    $stmt->execute(['id' => $id]);
+    if ($stmt->rowCount() === 1) {
+    $result = $stmt->fetch(); // Dohvatanje samo jednog reda kao rezultat
+}
+    if(isset($result)):
+      // var_dump($rezultat_post); 
+  ?>
+    <div class="card shadow bg-white rounded mb-5">
+    <img class="card-img-top" src="<?= $result->imageSrc ?>" alt="<?= $result->imageAlt ?>" />
+    <div class="card-body">
+      <h2 class="card-title"><?= $result->title ?></h2>
+      <p class="card-text"><?= $result->body ?></p>
+    </div>
+    <div class="card-footer py-4 text-muted">
+      <i></i>
+    <!-- <a href="#">Start Bootstrap</a> -->
+    </div>
+  </div>
+  <?php endif; ?>
+  
+ <?php
+
+  endif;
+?>
+
+
+
+//PAGINACIJA
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Pagination</title>
+</head>
+<body>
+<?php
+// connect to database
+$con = mysqli_connect('localhost','root','');
+mysqli_select_db($con, 'pagination');
+// define how many results you want per page
+$results_per_page = 10;
+// find out the number of results stored in database
+$sql='SELECT * FROM alphabet';
+$result = mysqli_query($con, $sql);
+$number_of_results = mysqli_num_rows($result);
+// determine number of total pages available
+$number_of_pages = ceil($number_of_results/$results_per_page);
+// determine which page number visitor is currently on
+if (!isset($_GET['page'])) {
+  $page = 1;
+} else {
+  $page = $_GET['page'];
+}
+// determine the sql LIMIT starting number for the results on the displaying page
+$this_page_first_result = ($page-1)*$results_per_page;
+// retrieve selected results from database and display them on page
+$sql='SELECT * FROM alphabet LIMIT ' . $this_page_first_result . ',' .  $results_per_page;
+$result = mysqli_query($con, $sql);
+while($row = mysqli_fetch_array($result)) {
+  echo $row['id'] . ' ' . $row['alphabet']. '<br>';
+}
+// display the links to the pages
+for ($page=1;$page<=$number_of_pages;$page++) {
+  echo '<a href="index.php?page=' . $page . '">' . $page . '</a> ';
+}
+?>
+</body>
+</html>
+
+ANKETA
+------
+0. proveriti da li je ulogovan i da li se nalazi u tabeli status za to pitanje i njegov odg 
+3. vratiti rezultate (%)
+4. prikazati
+
+ADMIN PANEL
+-----------
+0. isto kao i prethodno SELECT
+1. UPDATE I DELETE (opciono)
+2. 
+
+PAGINACIJA
+------------
