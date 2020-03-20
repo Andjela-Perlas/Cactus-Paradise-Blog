@@ -5,4 +5,5 @@ A list of technologies:
 - AJAX
 - jQuery
 - procedural PHP
+- MySQL
 
