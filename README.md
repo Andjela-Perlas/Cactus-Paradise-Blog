@@ -2,7 +2,7 @@
 A list of technologies:
 - Bootstrap 4
 - JavaScript
-- Ajax
+- AJAX
 - jQuery
 - procedural PHP
 
