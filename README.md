@@ -4,6 +4,6 @@ A list of technologies:
 - JavaScript
 - AJAX
 - jQuery
-- procedural PHP
+- Procedural PHP
 - MySQL
 
