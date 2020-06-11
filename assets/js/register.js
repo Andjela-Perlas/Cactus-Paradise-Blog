@@ -37,7 +37,7 @@ function register () {
 		nameError.textContent = "Polje za ime ne sme biti prazno!";
 	}
 
-		if (password) {
+	if (password) {
 		if (!rePassword.test(password)) {
 			passwordOk = false;
 			passwordError.textContent = "Lozinka nije ispravnog formata ili ima manje od 8 karaktera!";
@@ -47,7 +47,7 @@ function register () {
 		passwordError.textContent = "Polje za lozinku ne sme biti prazno!";
 	}
 
-if (email) {
+	if (email) {
 		if (!reEmail.test(email)) {
 			emailOk = false;
 			emailError.textContent = "Email nije ispravanog formata!";
@@ -57,21 +57,21 @@ if (email) {
 		emailError.textContent = "Polje za email ne sme biti prazno!";
 	}
 
-if (confirmPass !== password) {
-	confirmPassOk = false;
-	confirmPassError.textContent = "Lozinke se ne poklapaju!";
-}
-
-for (let i = 0; i < genders.length; i++) {
-	if (genders[i].checked) {
-		selectedGender = genders[i].value;
-		break;
+	if (confirmPass !== password) {
+		confirmPassOk = false;
+		confirmPassError.textContent = "Lozinke se ne poklapaju!";
 	}
-}
 
-if (selectedGender === "") {
-	genderChecked = false;
-}
+	for (let i = 0; i < genders.length; i++) {
+		if (genders[i].checked) {
+			selectedGender = genders[i].value;
+			break;
+		}
+	}
+
+	if (selectedGender === "") {
+		genderChecked = false;
+	}
 
 	if (nameOk && emailOk && passwordOk && confirmPassOk && genderChecked) {
 		nameError.textContent = "";
@@ -108,15 +108,15 @@ if (selectedGender === "") {
 				let message = document.querySelector('#msg');
 				switch (err.status) {
 					case 409:
-						alertDiv.classList.remove('invisible');
-						alertDiv.classList.add('alert-warning');
-						message.textContent = 'Email nije dostupan!';
-						break;
+					alertDiv.classList.remove('invisible');
+					alertDiv.classList.add('alert-warning');
+					message.textContent = 'Email nije dostupan!';
+					break;
 					case 422:
-						alertDiv.classList.remove('invisible');
-						alertDiv.classList.add('alert-warning');
-						message.textContent = 'Greške!';
-						break;
+					alertDiv.classList.remove('invisible');
+					alertDiv.classList.add('alert-warning');
+					message.textContent = 'Greške!';
+					break;
 				}
 			}
 		})
