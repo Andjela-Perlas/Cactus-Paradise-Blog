@@ -22,7 +22,7 @@ if (isset($_POST["registerBtn"])) {
 
 
 	$reName = '/^[A-Z][a-z]{2,15}\s[A-Z][a-z]{2,15}$/';
-  $rePassword = '/^[a-z0-9]{8,}$/';
+  	$rePassword = '/^[a-z0-9]{8,}$/';
 
 
   if ($name) {
