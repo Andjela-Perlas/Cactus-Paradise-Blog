@@ -26,7 +26,7 @@ if (isset($_GET['id'])) {
     </div>
   </div>
   <?php else: ?>
-    <h1 class=" font-weight-light mb-5 mt-4">Da bi ste mogli da komentarišete, morate biti prijavljeni!</h1>
+    <h1 class=" font-weight-light mb-5 mt-4">Da biste mogli da komentarišete, morate biti prijavljeni!</h1>
   <?php endif; ?>
   <div id="comment-collection" class="box">
     <?php if (count($comments)) :  ?>
