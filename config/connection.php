@@ -1,8 +1,6 @@
 <?php
-	require_once "config.php";
-// $user = 'root';
-// $pwd = '';
-// $dst = 'mysql:host=localhost;dbname=blog;charset=utf8';
+
+require_once "config.php";
 
 
 try {
