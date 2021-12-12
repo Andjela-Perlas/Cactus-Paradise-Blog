@@ -1,5 +1,5 @@
 # Cactus-Paradise-Blog
-A list of technologies:
+A list of used technologies:
 - Bootstrap 4
 - JavaScript
 - AJAX
